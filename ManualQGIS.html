@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>Manual de uso QGIS</title>
+
+<script src="ManualQGIS_files/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="ManualQGIS_files/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="ManualQGIS_files/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="ManualQGIS_files/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="ManualQGIS_files/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="ManualQGIS_files/navigation-1.1/tabsets.js"></script>
+<link href="ManualQGIS_files/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="ManualQGIS_files/highlightjs-9.12.0/highlight.js"></script>
+<script src="ManualQGIS_files/kePrint-0.0.1/kePrint.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Manual de uso QGIS</h1>
+
+</div>
+
+
+<div id="introduccion" class="section level1">
+<h1>Introducción</h1>
+<p>QGIS (también conocido como Quantum GIS) es un software de código abierto y gratuito que permite la visualización, edición, proceso y distribución de datos geográficos. Al ser un software de código abierto, cualquier persona puede modificar el núcleo del programa para mejorarlo o añadirle nuevas funcionalidades. Un ejemplo claro de este tipo de licencia es el software <a href="http://nextgis.com/nextgis-qgis/">NextGIS</a>, el cual es una versión modificada de QGIS, que a diferencia del original, incluye diversos complementos por defecto, un proceso de instalación diferente e integración con servicios web.</p>
+<p>QGIS es un software multi-plataforma, por lo tanto puede ser utilizado diversos sistemas operativos (Windows, MacOS, Linux y Android), a diferencia de softwares comerciales los cuales funcionan casi únicamente en Windows. Además, posee una activa comunidad de usuarios que dan soporte a la resolución de dudas en torno a su uso y de potenciar su uso mediante la creación de complementos.</p>
+<p>El último lanzamiento e largo plazo de este software es la versión 3.4, la cual será la distribución a a utilizar por el presente manual (Figura 1).</p>
+<div class="figure" style="text-align: center">
+<img src="logo.png" alt="Figura  1: Cuadro de bienvenida de QGIS" width="70%" />
+<p class="caption">
+Figura 1: Cuadro de bienvenida de QGIS
+</p>
+</div>
+<p>QGIS presenta ventajas comparativas y competitivas en relación a otros softwares SIG de libre acceso presentes en el mercado ya que incorpora dentro de su estructura de procesamiento las funciones de otros softwares populares de libre distribución (como GRASS, SAGA o TauDEM) o la posibilidad de incorporar procesos propios o de terceros mediante un complemento programado en Python o C++.</p>
+<div id="interfaz-grafica" class="section level2">
+<h2>Interfaz gráfica</h2>
+<p>QGIS es un software intuitivo y fácil de utilizar. Su interfaz gráfica (o <strong>GUI</strong> por sus siglas en inglés) está compuesta por (Figura 2): A: pestañas de opciones generales; B: barra de herramientas; C: panel izquierdo (generalmente usado para organizar la información cargada); y D: panel derecho, donde por defecto se aloja la barra de herramientas.</p>
+<div class="figure" style="text-align: center">
+<img src="base.png" alt="Figura  2: Interfaz gráfica de QGIS" width="100%" />
+<p class="caption">
+Figura 2: Interfaz gráfica de QGIS
+</p>
+</div>
+<p>Los elementos de los distintos componentes que conforman el GUI variarán dependiendo de las opciones seleccionadas, las herramientas activadas y los complementos descargados. Realizando un click derecho en los elementos B, C y D se pueden activar o desactivar los paneles y herramientas (Figura 3).</p>
+<div class="figure" style="text-align: center">
+<img src="activ.png" alt="Figura  3: Activar o desactivar paneles y herramientas" width="80%" />
+<p class="caption">
+Figura 3: Activar o desactivar paneles y herramientas
+</p>
+</div>
+</div>
+</div>
+<div id="importacion-de-datos-y-primeros-pasos" class="section level1">
+<h1>Importación de datos y primeros pasos</h1>
+<p>Existen múltiples formas de importar archivos a QGIS, y a su vez, múltiples formatos admitidos por QGIS en la importación de archivos. Las maneras formas más utilizadas son las siguientes</p>
+<ul>
+<li><p><strong>Método <em>drag and drop</em></strong>: Consiste en simplemente arrastrar desde un directorio un archivo para ser soltado en el panel central de QGIS. Cabe señalar que para utilizar este método hay que conocer cuál es la extensión correcta para vincular el conjunto de archivos que pueden conformar una capa. El ejemplo más común es el formato ESRI Shapefile, el cual almacena datos vectoriales. Una capa consta de mínimo 3 archivos: <code>*.shp</code>, <code>*.shx</code> y <code>*.dbf</code>, de los cuales hay que arrastrar el archivo cuya extensión sea <code>*.shp</code>.</p></li>
+<li><p><strong>Utilizar el Administrador de fuentes de datos</strong>: el <code>Administrador de fuentes de datos</code> es una herramientas que permite cargar archivos de diferentes extensiones desde un menú de selección. Para acceder a ella se debe presionar sobre el botón <img src="boton.png" style="width:2.0%" /> directo en la barra de herramientas o ir a la pestaña <code>Capa / Administrador de fuentes de datos</code>. Se abrirá una ventana emergente en al cual se debe seleccionar la naturaleza del archivo, ya sea vectorial, ráster, GeoPackage, SpatiaLite, PostgreSQL, etc (Figura 4).</p></li>
+</ul>
+<div class="figure" style="text-align: center">
+<img src="adminis.png" alt="Figura  4: Administrador de fuentes de datos" width="70%" />
+<p class="caption">
+Figura 4: Administrador de fuentes de datos
+</p>
+</div>
+<div id="modelo-vectorial" class="section level2">
+<h2>Modelo vectorial</h2>
+<p>A modo de ejemplo, se cargará una capa vectorial del conjunto de datos facilitado para el presente curso. La capa tiene por nombre <code>Limite_Cuencas_BNA.shp</code>, nótese que al señalar la extensión <code>*.shp</code> de inmediato asociamos este archivo a una cobertura vectorial de formato ESRI Shapefile, el cual fue mencionado en párrafos anteriores. El archivo se encuentra en la carpeta <code>ArchivosSIG / Datos vectoriales / DGA / Limite_cuencas_BNA</code> (Figura 5).</p>
+<div class="figure" style="text-align: center">
+<img src="ruta.png" alt="Figura  5: Ruta de acceso al archivo" width="60%" />
+<p class="caption">
+Figura 5: Ruta de acceso al archivo
+</p>
+</div>
+<p>Una vez cargado el archivo, proceder a cerrar el Administrador de fuentes de datos y observar la capa cargada. En este caso, el modelo de datos es de tipo vectorial y cuya geometría es del tipo líneas (Figura 6):</p>
+<div class="figure" style="text-align: center">
+<img src="capa.png" alt="Figura  6: Archivo vectorial cargado" width="70%" />
+<p class="caption">
+Figura 6: Archivo vectorial cargado
+</p>
+</div>
+<p>Para poder navegar por la capa se utilizan los botones que aparecen en la barra de herramienta <img src="navegar.png" style="width:20.0%" /> o con el tercer botón del mouse y el scroll del mismo.</p>
+<p>Por lo general, la creación de archivos vectoriales está asociado a la administración de información de variada naturaleza asociada a límites geográficos. Estos vectores tienen en su estructura un base de datos denominada tabla de atributos.</p>
+<p>La tabla de atributos está compuesta por filas y columnas, donde cada fila corresponde a una observación y cada columna a una variable. Todas las capas vectoriales incluyen un campo denominado FID (<em>Feature ID</em>) u OID (<em>Object ID</em>), los cuales están destinados a numerar cada una de las características de la capa vectorial. Muchas veces este campo está oculto en algunos softwares SIG, pero siempre está presente.</p>
+<p>Para acceder a la tabla vectorial se debe clickear el botón <img src="tab.png" style="width:2.0%" /> o clickear con el botón derecho del mouse sobre el nombre de la capa en panel de la izquierda y seleccionar <code>Abrir tabla de atributos</code>.</p>
+<p>La tabla de atributos de las capas vectoriales muchas veces puede críptica y difícil de descifrar, ya que los nombres de la columnas no pueden exceder los 10 caracteres, deben comenzar con una letra, no puede repetirse el nombre en la misma tabla y no hay un lugar donde incorporar una descripción de la variable en el formato estándar de ESRI Shapefile.</p>
+<div class="figure" style="text-align: center">
+<img src="tab2.png" alt="Figura  7: Tabla de atributos de la capa cargada" width="60%" />
+<p class="caption">
+Figura 7: Tabla de atributos de la capa cargada
+</p>
+</div>
+<p>En el ejemplo se aprecian dos variables, <code>TIPO_ID</code> y <code>TIPO</code>. La variable <code>TIPO_ID</code> hace referencia a el código de cada tipo de límite hidrográfico, mientras que <code>TIPO</code> informa la descripción de dicho código, en el Cuadro 1 se presentan las posibles observaciones para esta capa vectorial.</p>
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>
+Cuadro 1: Código y descripción del tipo de límite
+</caption>
+<thead>
+<tr>
+<th style="text-align:center;">
+Código
+</th>
+<th style="text-align:right;">
+Descripción
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:right;">
+Cuenca
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:right;">
+Subcuenca
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+3
+</td>
+<td style="text-align:right;">
+Subsubcuenca
+</td>
+</tr>
+</tbody>
+</table>
+<p>Al cargar una capa vectorial, esta tendrá asignado un color aleatorio por defecto. Para modificar el color de la capa, se debe acceder a las propiedades de esta misma ejecutando un click con el botón derecho del mouse sobre el nombre de la capa en el panel de capas (Figura 8).</p>
+<div class="figure" style="text-align: center">
+<img src="prop.png" alt="Figura  8: Menú desplegable" width="30%" />
+<p class="caption">
+Figura 8: Menú desplegable
+</p>
+</div>
+<p>Esto abrirá las propiedades de la capa. La acción de modificar el color, tamaño y patrón de las líneas se ejecuta desde la pestaña de <code>Simbología</code>. La simbología, al igual que otros términos dentro del contexto de los Sistemas de Información Geográfica, se encuentra definida en la sección <strong>Glosario</strong>. La pestaña <code>Información</code> muestra algunos datos de la capa cargada, por ejemplo el nombre, ruta, driver (o formato), codificación, tipo de geometría, SRC (Sistema de coordenadas de referencia), extensión (X máximo, X mínimo, Y máximo y Y mínimo), la unidad del sistema de referencia de la capa y el número de entidades de la capa (Figura 9).</p>
+<div class="figure" style="text-align: center">
+<img src="prop2.png" alt="Figura  9: Propiedades de la capa vectorial" width="50%" />
+<p class="caption">
+Figura 9: Propiedades de la capa vectorial
+</p>
+</div>
+<p>En la pestaña de Simbología se configura la manera de cómo se representa cada entidad. Se puede configurar el ancho, diseño de las líneas, comportamiento entre las intersecciones de diferentes líneas, el color, entre otras cosas. También, algo muy útil es el uso de símbolos complejos, por ejemplo: en vez de utilizar un único estilo de simbología para todas las entidades se pueden realizar diferenciaciones en base a categorías, graduaciones (de color o tamaño) o mezclar ambos tipos de clasificación (Figura 10). En este caso se realiza una clasificación por categoría usando el campo <code>TIPO</code> para modificar el color de las líneas en base al tipo de límite hidrográfico.</p>
+<div class="figure" style="text-align: center">
+<img src="simbo.png" alt="Figura  10: Opciones de simbología de una capa vectorial de lineas" width="70%" />
+<p class="caption">
+Figura 10: Opciones de simbología de una capa vectorial de lineas
+</p>
+</div>
+<p>Una vez aplicado el nuevo estilo de simbología, se puede apreciar la variedad de límites que posee la capa vectorial (Figura 11). Sin referencia extra, es muy difícil ubicar los límites con alguna cuenca conocida sin tener el conocimiento o entrenamiento visual apropiado para identificar fácilmente las cuencas por su forma. Por ello, la utilización de un <strong>mapa base</strong> es útil para poder tener una referencia espacial de lo que nuestros ojos observan.</p>
+<div class="figure" style="text-align: center">
+<img src="simbo2.png" alt="Figura  11: Resultado de la aplicación de una simbología categorizada" width="70%" />
+<p class="caption">
+Figura 11: Resultado de la aplicación de una simbología categorizada
+</p>
+</div>
+<p>Tal como se mencionó en la introducción del presente documento, QGIS es un software que posibilita la instalación múltiples <em>plug-ins</em>. Hay más de un <em>plug-in</em> que permite integrar mapas base al panel de capas. De todos los existentes, el más estable y con más opciones es <strong>QuickMapServices</strong>, el cual permite cargar mapas base desde Google Earth, Bing, OpenStreetMap, entre otros.</p>
+<p>Para acceder a los <em>plug-ins</em> o complementos hay que dirigirse a a la pestaña <code>Complementos / Administrar e instalar complementos</code>. En el cuadro que se abre aparece la descripción de esta herramientas para la instalación, actualización y desinstalación de complementos (Figura 12).</p>
+<div class="figure" style="text-align: center">
+<img src="comple.png" alt="Figura  12: Ventana de complementos" width="70%" />
+<p class="caption">
+Figura 12: Ventana de complementos
+</p>
+</div>
+<p>En la barra de buscador, escribir <code>QuickMapServices</code>, seleccionar el complemento filtrado e instalar. Luego de la instalación, debiera aparecer un panel similar al de la Figura 13. En la barra <code>Search string...</code> se teclea el mapa base que uno desea añadir. A modo de ejemplo escribir <code>Google Satellite Hybrid</code> y añadir el mapa base pulsando el botón <code>Add</code>.</p>
+<div class="figure" style="text-align: center">
+<img src="qms.png" alt="Figura  13: Panel de QuickMapServices" width="25%" />
+<p class="caption">
+Figura 13: Panel de QuickMapServices
+</p>
+</div>
+<p>La capa añadida con etiqueta incluida permite tener una referencia del territorio Figura 14. Así es posible vincular los límites de la cuencas del Banco Nacional de Aguas de la DGA con el espacio.</p>
+<div class="figure" style="text-align: center">
+<img src="base2.png" alt="Figura  14: Mapa base añadido al panel de capas" width="70%" />
+<p class="caption">
+Figura 14: Mapa base añadido al panel de capas
+</p>
+</div>
+</div>
+<div id="modelo-raster" class="section level2">
+<h2>Modelo ráster</h2>
+<p>Para ejemplificar la importación de archivos ráster se importará un modelo de elevación digital, el SRTM de 90 m de resolución de pixel reproyectado. El procedimiento es el mismo que se debe realizar con la importación de datos vectoriales, sólo hay que elegir la pestaña adecuada (botón <img src="ras.png" style="width:5.0%" />) y seleccionar la ruta de <code>ArchivosSIG / Datos ráster / DEM.tif</code> en la carpeta del curso.</p>
+<p>Lo más probable es que la capa se cargue por sobre las demás, obstaculizando la visualización de la capa vectorial antes cargada. Para poder modificar el orden de las capas, se debe arrastrar dicho elemento desde el panel de capas hacia una ubicación que permita la comprensión de las múltiples capas hasta ahora cargadas. Esta sería (Figura 15):</p>
+<ol style="list-style-type: decimal">
+<li>Capa vectorial de los límites de las cuencas</li>
+<li>Modelo de elevación digital</li>
+<li>Mapa base</li>
+</ol>
+<div class="figure" style="text-align: center">
+<img src="ordn.png" alt="Figura  15: Orden de capas" width="30%" />
+<p class="caption">
+Figura 15: Orden de capas
+</p>
+</div>
+<p>El procedimiento para verificar la información de la capa ráster, como también para cambiar la simbología, es el mismo que para una capa vectorial. Sí hay diferencias por el modelo de datos.</p>
+<p>Las capas ráster no contienen tabla de atributos (en casos excepcionales las hay) ya que cada imagen representa una variable y cada pixel una observación.</p>
+<p>Existen archivos ráster denominados multi-banda que están compuestos por dos o más imágenes apiladas. Para este caso, cada banda representa una variable diferente. Puede ser que cada banda represente un canal de un espectro electromagnético de la teledetección, un índice espectral, una fecha de análisis, etc.</p>
+<p>Existe una herramienta que funciona tanto para rásters como para vectores que se denomina <code>Identificar objetos espaciales</code>. Para acceder a ella hay que clickear el botón <img src="ras.png" style="width:2.0%" />) en la Barra de herramientas. <strong>Se debe tener seleccionada la capa a consultar en el panel de capas (el subrayado del nombre de la capa indica la selección)</strong>.</p>
+<p>En la Figura 16 se utilizó esta herramienta para identificar el valor de un pixel cercano al faro monumental. El resultado de la consulta es <code>Banda 1  4.317021</code>, esto significa que el valor de elevación del pixel consultado es de 4 m.s.n.m. con una gran cantidad de decimales y que la banda consultada es la número 1 (es de esperar, ya que no es un archivo multibanda). El DEM inicialmente estaba en un sistema de coordenadas geográficas (WGS 84 Long/Lat) el cual fue reproyectado a un sistema de coordenadas cartesiano (SIRGAS 2000 UTM Huso 19 Sur) mediante el método de remuestreo de pixel Bilinear, el cual interpola valores entre varios pixeles (para conocer más de los métodos disponibles visitar <a href="https://gisgeography.com/raster-resampling/" class="uri">https://gisgeography.com/raster-resampling/</a>) y genera valores con una gran cantidad de valores, a pesar de que originalmente el set de datos es tipo numérico entero.</p>
+<div class="figure" style="text-align: center">
+<img src="sele.png" alt="Figura  16: Consulta del valor de un pixel" width="70%" />
+<p class="caption">
+Figura 16: Consulta del valor de un pixel
+</p>
+</div>
+<p>Algo muy interesante para utilizar en archivos ráster que representan modelos de elevación o superficie digital es el mapa de sombras (o <em>Hillshade</em>) el cual se puede calcular mediante un geoproceso o aplicar como simbología sobre una capa ráster. La segunda opción es la más práctica cuando sólo se pretende visualizar el set de datos y no relacionar el valor del mapa de sombras con algún fenómeno (como la cuantificación de horas luz en un terreno agrícola, pensando en el posible sombreamiento en los meses de invierno).</p>
+<p>Para la aplicación de este tipo e simbología, ir a <code>Propiedades / Simbología / Tipo de renderizador / Mapa de Sombras (Hillshade)</code> (Figura 17). Dentro de esta ventana se configura el ángulo de altura solar (que tan elevado está con respecto al horizonte), el ángulo de acimut solar (la dirección en grados sexagesimales con respecto al norte), el factor Z (en este caso es 1 ya que la altitud está en metros y el sistema de coordenadas de referencia también lo está, este factor es un conversor de unidades entre la el eje horizontal y vertical).</p>
+<div class="figure" style="text-align: center">
+<img src="hill.png" alt="Figura  17: Propiedades de la capa - Simbología" width="70%" />
+<p class="caption">
+Figura 17: Propiedades de la capa - Simbología
+</p>
+</div>
+<p>El resultado se aprecia en la Figura 18. Nótese que ya no está presente la capa de los límites de la cuenca, ya que se desactivo deseleccionado la casilla que está a la izquierda del nombre de la capa en el Panel de capas.</p>
+<div class="figure" style="text-align: center">
+<img src="hill2.png" alt="Figura  18: Resultado aplicación mapa de sombras" width="70%" />
+<p class="caption">
+Figura 18: Resultado aplicación mapa de sombras
+</p>
+</div>
+<p>Una de la novedades de QGIS 3 es la creación de vistas 3D, herramienta muy útil para ver el relieve de los modelos de elevación digital. Cabe mencionar que al ser una característica relativamente nueva, QGIS puede fallar (ya que es un software gratuito, la puesta a punto de las herramientas recientemente incorporadas demora un tiempo razonable antes de ser herramientas estables). Para no perder ningún avance, hay que salvar el proyecto clickeando el botón <img src="salvar.png" style="width:1.7%" /> o ir a la pestaña <code>Proyecto / Guardar</code>. Se debe especificar nombre y ruta (la que usted desee) y el proyecto guardará la ruta y simbología de las capas abiertas en él, mas no los archivos (para evitar duplicidad de archivos).</p>
+<p>Para crear una nueva vista hay que ir a la pestaña <code>Ver / Nueva vista de mapa 3D</code> e ir a la configuración de la ventana clickeando el botón <img src="llave.png" style="width:2.0%" />. La configuración puede ser similar a la mostrada en la Figura 19, es utilizó una escala vertical de 5 para exagerar el relieve del territorio y diferenciar cerros y quebradas a nivel regional.</p>
+<div class="figure" style="text-align: center">
+<img src="3d.png" alt="Figura  19: Ventana de configuración de la ventana 3D" width="50%" />
+<p class="caption">
+Figura 19: Ventana de configuración de la ventana 3D
+</p>
+</div>
+<p>La navegación dentro de la capa se realiza con el botón derecho y el tercer botón del mouse (por lo general, botón ubicado junto con el scroll). Ya que se puede modificar la cámara del usuario en relación a este mapa 3D, se puede visualizar un panorama general de la región y parte de Argentina (Figura 20)</p>
+<div class="figure" style="text-align: center">
+<img src="3d2.png" alt="Figura  20: Vista del mapa 3D" width="80%" />
+<p class="caption">
+Figura 20: Vista del mapa 3D
+</p>
+</div>
+</div>
+<div id="analisis-multitemporal" class="section level2">
+<h2>Análisis multitemporal</h2>
+<p>Otro <em>plug-in</em> muy interesante es <code>MUTANT</code> (por las siglas de <em>MUlti Temporal ANalysis Tool</em>). Es una herramienta muy similar a <code>Identificar objetos espaciales</code>, pero a diferencia de aquella herramienta, es posible obtener el valor de múltiples capas al mismo tiempo e incluso graficar dichos valores.</p>
+<p>Para instalar el complemento se debe seguir el mismo paso descrito anteriormente. Además, cargar todas las capas ráster ubicadas en la carpeta <code>ArchivosSIG / Datos ráster / SnowIndex /</code> (un total de 48, con extensión <code>*.tif</code>). Cada una de estas capas corresponde al máximo valor de el índice de nieve estandarizado (<em>NDSI</em>) para cada mes desde enero del 2015 a diciembre del 2018 (hasta los primeros días de este mes).</p>
+<p>Los datos fueron generados en la plataforma de webGIS Google Earth Engine, plataforma que se enfoca en el manejo de datos satelitales en la nube (utilizando los servidores globales de Google) mediante la utilización del lenguaje de programación JavaScript (Figura 21).</p>
+<div class="figure" style="text-align: center">
+<img src="gee.png" alt="Figura  21: Plataforma Google Earth Engine" width="90%" />
+<p class="caption">
+Figura 21: Plataforma Google Earth Engine
+</p>
+</div>
+<p>Las capas tienen por nombre <code>NDSI_15_MM_YYYY.tif</code>, siendo <code>NDSI</code> por el nombre del índice, <code>_15</code> por el día central del mes, <code>_MM</code> por el mes en formato numérico, <code>_YYYY</code> por el año en formato numérico y <code>.tif</code> por el formato del archivo ráster. Para probar el complemento, guardar el proyecto, quitar la capa vectorial, la del modelo de elevación vectorial y activar el <em>plug-in</em> (si no aparece el cuadro del complemento, activar desde los paneles).</p>
+<p>Dentro del cuadro del <em>plug-in</em>, ir a la pestaña <code>Time</code>, activar la casilla <code>Enable multi-temporal analysis</code>, tener activa sólo la casilla <code>Filename</code> en el recuadro blanco, cortar los primeros 5 caracteres y en <code>Datepattern</code> escribir <code>%d_%m_%Y</code> para configurar el formato de fecha de cada imagen (Figura 22).</p>
+<div class="figure" style="text-align: center">
+<img src="mut.png" alt="Figura  22: Complemento MUTANT" width="70%" />
+<p class="caption">
+Figura 22: Complemento MUTANT
+</p>
+</div>
+<p>Luego, cambiar a la pestaña <code>Graph</code> y pasar el mouse por sobre las imágenes. El resultado debe ser una tabla como la que se muestra en la Figura 23. También se puede ver la tabla de datos desde la pestaña <code>Table</code>.</p>
+<div class="figure" style="text-align: center">
+<img src="mut2.png" alt="Figura  23: Gráfico multitemporal de NDSI" width="90%" />
+<p class="caption">
+Figura 23: Gráfico multitemporal de NDSI
+</p>
+</div>
+<p>El complemento MUTANT está en etapa de adaptación a la versión de QGIS 3, por lo tanto puede que falle en algún proceso. Para la versión de QGIS 2.x, el complemento funciona sin fallas. Ante cualquier falla, se recomienda la utilización de QGIS 2.18 LTR para este tipo de consultas espaciales.</p>
+</div>
+</div>
+<div id="composicion-cartografica" class="section level1">
+<h1>Composición cartográfica</h1>
+<p>Para crear una cartografía digital se debe ir a la pestaña <code>Proyecto / Nueva composición de impresión</code> o presionar el botón <img src="compo.png" style="width:1.7%" />. Se abrirá un cuadro emergente en donde se debe indicar el nombre que se le dará a esa composición, ingresar el que usted desee y presionar en <code>OK</code>.</p>
+<p>Se abrirá una ventana emergente muy parecida al navegador de capas de QGIS. También contiene pestañas en la zona superior. Pero además contiene (Figura 24): A) Barra de herramientas superior; B) Barra de herramientas lateral; C) Panel de opciones; D) Composición.</p>
+<div class="figure" style="text-align: center">
+<img src="disenador.png" alt="Figura  24: Diseñador de impresión" width="100%" />
+<p class="caption">
+Figura 24: Diseñador de impresión
+</p>
+</div>
+<p>Para añadir gran parte de los elementos basta con utilizar la barra de herramientas lateral. Lo primero que se debe realizar es añadir una vista de mapa presionando el botón <img src="mapa.png" style="width:1.7%" />. Se realiza un primer click donde se pretende colocar uno de los vértices del mapa (en la composición) y se mantiene presionado hasta posicionar el segundo vértice del rectángulo, para soltar el botón del mouse y que se incorpore el mapa. Una vez que se añade el mapa, se activarán las propiedades de este elemento en el panel de opciones al lado derecho Figura 25.</p>
+<div class="figure" style="text-align: center">
+<img src="mapp.png" alt="Figura  25: Añadir mapa a la composición" width="100%" />
+<p class="caption">
+Figura 25: Añadir mapa a la composición
+</p>
+</div>
+<p>Para el ejemplo mostrado en la figura anterior, se seleccionó solo un mes de la serie temporal de nieve en la cuenca y se configuró la simbología para que se excluyeran de la visualización los valores inferiores a 40 (&lt;0.4 NDSI).</p>
+<p>Diversas propiedades pueden ser configurables desde este panel. Entre ellas se destacan:</p>
+<ul>
+<li><strong>Escala</strong>: de referencia, por el número 1000 equivale a una escala de 1:1000</li>
+<li><strong>Capas</strong>: para bloquear capas o sus estilos de capa, ya que si se cambia alguna propiedad en el panel de capas esta se ve reflejada en el diseñador de impresión</li>
+<li><strong>Extensión</strong>: para definir las coordenadas del rectángulo del mapa.</li>
+<li><strong>Controlado por Atlas</strong>: para configurar la generación de múltiples cartografías de manera automatizada.</li>
+<li><strong>Cuadrículas</strong>: para crear una grilla o marcas de referencia en algún sistema de coordenadas sobre el mapa.</li>
+<li><strong>Vistas generales</strong>: si es que hay más de un mapa en la composición, para señalar con un rectángulo la extensión de uno o más en referencia al que se está configurando.</li>
+<li><strong>Posición y tamaño</strong>: ajuste de posición del mapa y el tamaño de este (en unidad de longitud).</li>
+<li><strong>Rotación</strong>: rotación del mapa con respecto a la posición definida en la opción anterior.</li>
+<li><strong>Marco</strong>: para añadir un marco que delimite el rectángulo del mapa.</li>
+<li><strong>Fondo</strong>: para incorporar un fondo en el mapa (sólo visible si no hay mapa base y si las entidades no cubren la extensión del rectángulo)</li>
+<li><strong>Otras opciones</strong>: para definir ID o revisar las propiedades del mapa.</li>
+</ul>
+<p>Para agregar una escala gráfica, se debe presionar el botón de la herramienta <code>Añadir nueva barra de escala</code> <img src="escala.png" style="width:1.7%" /> y personalizar en base a las opciones que esta incorpora, por ejemplo la unidad de longitud, etiqueta, unidades de mapa por unidad de barra (si se utiliza kilómetro, debe ser 1000 por ejemplo), la cantidad de segmentos, tamaño, altura, color etc.</p>
+<p>Para añadir una flecha de norte se debe incorporar una imagen presionando el botón <img src="imagen.png" style="width:1.7%" />, desplegar la pestaña de <code>Directorios de búsqueda</code> y seleccionar la flecha de norte que desee (Figura 26).</p>
+<div class="figure" style="text-align: center">
+<img src="mapp2.png" alt="Figura  26: Mapa con algunos elementos básicos" width="100%" />
+<p class="caption">
+Figura 26: Mapa con algunos elementos básicos
+</p>
+</div>
+<p>Para mejorar la comprensión del mensaje que se quiere transmitir con la cartografía, es muy útil utilizar polígonos invertidos sobre una capa vectorial de polígonos como simbología para centrar la vista en el objeto de análisis Figura 27. Para ello se debe configurar la simbología en las propiedades de la capa de cuencas del BNA, se puede utilizar un filtro o <code>Definition query</code> para excluir el resto de cuencas de Chile y sólo centrar la visualización en la cuenca de Rio Limarí:</p>
+<div class="figure" style="text-align: center">
+<img src="inv.png" alt="Figura  26: Mapa con algunos elementos básicos" width="70%" />
+<p class="caption">
+Figura 26: Mapa con algunos elementos básicos
+</p>
+</div>
+<p>El resultado (Figura 28) se verá reflejado en el mapa añadido a la cartografía. Hay otros elementos que deben ser añadidos, como la grilla de las coordenadas, leyenda, título o referencia cartográfica. Queda en vuestras manos la exploración de la herramienta y cualquier consulta posterior puede ser realizada a mi persona mediante un correo a <code>aatapia@userena.cl</code>.</p>
+<div class="figure" style="text-align: center">
+<img src="carto.png" alt="Figura  28: Aplicación de polígonos invertidos como simbología" width="70%" />
+<p class="caption">
+Figura 28: Aplicación de polígonos invertidos como simbología
+</p>
+</div>
+</div>
+<div id="glosario" class="section level1">
+<h1>Glosario</h1>
+<ul>
+<li><strong>Arcos</strong>: línea recta o curva que une dos puntos.</li>
+<li><strong>Buffer</strong>: termino en inglés, es una herramienta que aplica una función de proximidad creando un polígono a una distancia dada sobre una característica seleccionada o varias características.</li>
+<li><strong>Cartas</strong>: son mapas especialmente diseñados para cubrir las necesidades de los navegantes tanto náuticos como aéreos. Sobre ellas se determinan posiciones, se trazan trayectorias, se señalan rumbos, etc.</li>
+<li><strong>Cartografía</strong>: Es la ciencia que estudia los diferentes métodos o sistemas que permiten representar en un plano, una parte o la totalidad de la superficie terrestre.</li>
+<li><strong>Cartogramas</strong>: es un mapa o diagrama que muestra datos de cantidad asociados a sus respectivas áreas, mediante la modificación de los tamaños de las unidades de enumeración. La información es aportada mediante la distorsión de las superficies reales, utilizando cada superficie de enumeración como un símbolo proporcional, el cual aumenta o disminuye en función de los valores correspondientes.</li>
+<li><strong>Centroide</strong>: punto central de un polígono, puede decirse que es el punto donde si una recta lo atraviesa, queda dividido en dos segmentos de idéntico momento respecto a la recta en cuestión.</li>
+<li><strong>Coropletas</strong>: un mapa de coropletas es un mapa temático, en el que las regiones se colorean de un motivo, para representar y facilitar la comparación de una medida estadística de una región, como por ejemplo la densidad de población.</li>
+<li><strong>Coordenadas geográficas</strong>: son los valores de latitud y longitud que permiten determinar la posición de un punto sobre una superficie básicamente esférica, como puede ser La Tierra.</li>
+<li><strong>Coordenadas cartesianas</strong>: valores de abscisas y ordenadas, X e Y respectivamente que permiten determinar la posición de un punto sobre una superficie plana.</li>
+<li><strong>Dátum</strong>: es el punto donde coinciden las verticales del geoide y el elipsoide, así como las coordenadas astronómicas y geodésicas y sirve de referencia para la determinación del recto de los vértices.</li>
+<li><strong>Elipsoide</strong>: Es una superficie curva cerrada cuyas tres secciones ortogonales principales son elípticas, es decir, son originadas por planos que contienen dos ejes cartesianos. Un elipsoide se obtiene al <em>deformar</em> una esfera, mediante una transformación homológica, en la dirección de sus tres diámetros ortogonales.</li>
+<li><strong>Entidad</strong>: pueden ser puntos, líneas o polígonos con posición geográfica que representa una característica del mundo real.</li>
+<li><strong>Escala (barra)</strong>: relación de semejanza que se establece entre las dimensiones reales de un objeto y su imagen sobre el mapa.</li>
+<li><strong>Geodesia</strong>: es la ciencia que tiene por objeto el estudio de la forma, dimensiones y campo gravitatorio de La Tierra.</li>
+<li><strong>Geoide</strong>: es un cuerpo de forma casi esférica, aunque con un ligero achatamiento en los polos, definido por la superficie equipotencial del campo gravitatorio terrestre, que considera la variación de la gravedad debida a la distribución irregular de la masa terrestre, este es perpendicular en cada uno de sus puntos a la dirección de la gravedad.</li>
+<li><strong>Impedancia</strong>: de un arco, se define como la resistencia puesta para ser recorrido, desde uno de sus extremos (nodo) a otro.</li>
+<li><strong>Isolíneas</strong>: líneas que representan puntos del espacio donde el fenómeno adquiere el mismo valor, ejemplo curvas de nivel.</li>
+<li><strong>Líneas automecoicas</strong>: líneas que conservan las longitudes en determinadas direcciones.</li>
+<li><strong>Mapa</strong>: representación gráfica, sobre una superficie plana, de una parte, o el total de la superficie terrestre. Poseen gran diversidad de tamaños y tipos según su escala, tema a tratar, etc.</li>
+<li><strong>Nodo</strong>: un punto de intersección o unión de varios elementos que confluyen en el mismo lugar.</li>
+<li><strong>Planos</strong>: son mapas realizados a una escala relativamente grande y sin utilizar proyección geográfica. Usualmente están emplazados en coordenadas cartesianas arbitrarias o bajo un sistema de coordenadas de referencia cuya unidad sea metro o pie.</li>
+<li><strong>Proyección cartográfica</strong>: es el método usado para realizar una representación de una parte o el total de la superficie terrestre obtenida por transformación de una superficie básicamente esférica (como puede ser La Tierra) en una superficie plana (como puede ser un mapa).</li>
+<li><strong>Simbología</strong>: técnica para representar una entidad o característica mediente patrones gráficos.</li>
+<li><strong>Sinuosidad</strong>: de las líneas, es el índice que determina que tanto se aleja el trazado de una línea con respecto a la ruta más corta; el cociente entre la longitud de la línea y la distancia que separa sus dos puntos extremos.</li>
+<li><strong>Teledetección</strong>: es la técnica que permite obtener información a distancia de objetos (situados en la superficie terrestre, marina o en la atmósfera), sin que exista un contacto material. Para ello, es necesario que, aunque sin contacto material, exista algún tipo de interacción entre los objetos observados y un sensor situado en una plataforma (satélite, avión, etc.).</li>
+<li><strong>Tesela</strong>: o celdilla, es la entidad mínima de una capa ráster.</li>
+<li><strong>Topología</strong>: conjunto de reglas que dicta las propiedades espaciales de las características de punto, línea o área, tales como conectividad adyacencia y contigüidad.</li>
+</ul>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
