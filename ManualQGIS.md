@@ -1,21 +1,3 @@
----
-title: "Manual de uso QGIS"
-output:
-  html_document:
-    fig_caption: yes
-    keep_md: yes
-    self_contained: no
-  pdf_document:
-    keep_tex: yes
-    latex_engine: xelatex
-  word_document: default
-header-includes: \usepackage{caption} \captionsetup[figure]{labelformat=empty} \captionsetup[table]{labelformat=empty}
----
-
-
-
-
-
 # Introducción
 
 QGIS (también conocido como Quantum GIS) es un software de código abierto y gratuito que permite la visualización, edición, proceso y distribución de datos geográficos. Al ser un software de código abierto, cualquier persona puede modificar el núcleo del programa para mejorarlo o añadirle nuevas funcionalidades. Un ejemplo claro de este tipo de licencia es el software [NextGIS](http://nextgis.com/nextgis-qgis/), el cual es una versión modificada de QGIS, que a diferencia del original, incluye diversos complementos por defecto, un proceso de instalación diferente e integración con servicios web.
